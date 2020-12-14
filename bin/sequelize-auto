@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+const SequelizeAuto = require('../');
+const path = require('path');
+
+const argv = require('yargs')
+  .usage(
+    'Usage: sequelize-auto -h <host> -d <database> -u <user> -x [password] -p [port] -o [/path/to/models] -t [tableName]'
+  )
+  .demand(['d', 'u', 'x', 't'])
+  .alias('h', 'host').string('h')
+  .alias('d', 'database').string('d')
+  .alias('u', 'user').string('u')
+  .alias('x', 'pass').string('x')
+  .alias('p', 'port').number('p')
+  .alias('o', 'output').string('o')
+  .alias('t', 'tables').string('t')
+  .alias('f', 'over-write').boolean('f')
+  .describe('h', 'IP/Hostname for the database.')
+  .describe('d', 'Database name.')
+  .describe('u', 'Username for database.')
+  .describe('x', 'Password for database.')
+  .describe('p', 'Port number for database. Ex: 3306')
+  .describe('o', 'What directory to place the models.')
+  .describe('t', 'table name to import')
+  .describe('f', 'Force to overwrite existed model files')
+  .argv;
+
+const directory = argv.o || path.resolve(process.cwd() + '/model');
+
+const host = argv.h || 'localhost';
+const port = argv.p || 3306;
+const overwrite = argv.f || false;
+
+const auto = new SequelizeAuto(host, argv.d, argv.u, argv.x, argv.t, port, directory, overwrite);
+
+auto.run().then(() => {
+  // console.log("Done!");
+});
