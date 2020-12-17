@@ -1,6 +1,6 @@
 {
   "name": "egg-mysql-sequelize-auto",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Automatically generate mysql sequelize models for Egg.js framework from your database.",
   "main": "index.js",
   "devDependencies": {
@@ -20,14 +20,13 @@
   "scripts": {
     "tsc": "tsc",
     "clean": "rimraf lib && rimraf types && rimraf **/model && rimraf *.tgz",
-    "build": "npm run clean && tsc",
-    "dev": "tsc && mysql-sequelize-model -o './model' -h 127.0.0.1 -d admin_demo_local -u test -p 3306 -x 123 -t system_user -f"
+    "build": "npm run clean && tsc"
   },
   "engines": {
     "node": ">= 8"
   },
   "bin": {
-    "sequelize-auto": "bin/sequelize-auto"
+    "mysql-sequelize-model": "bin/mysql-sequelize-model"
   },
   "files": [
     "*.js",
