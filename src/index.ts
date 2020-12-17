@@ -35,7 +35,6 @@ export class SequelizeAuto {
       this.db.connection.end();
     }
   }
-
 }
 
 module.exports = SequelizeAuto;
