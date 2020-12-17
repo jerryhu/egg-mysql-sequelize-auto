@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Automatically generate mysql sequelize models for Egg.js framework from your database.",
   "main": "index.js",
-  "license": "MIT",
   "devDependencies": {
     "fs-extra": "^9.0.1",
     "@types/fs-extra": "^9.0.4",
@@ -36,5 +35,15 @@
     "types/**/*.ts",
     "stubs/*.stub",
     "*.md"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerryhu/egg-mysql-sequelize-auto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jerryhu/egg-alicloud-mns/issues"
+  },
+  "homepage": "https://github.com/jerryhu/egg-mysql-sequelize-auto#readme",
+  "author": "Jerry Hu",
+  "license": "MIT"
 }
