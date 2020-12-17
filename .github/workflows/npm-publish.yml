@@ -21,7 +21,7 @@ jobs:
           else
           npm i
           fi
-      - run: npm build
+      - run: npm run build
 
   publish-npm:
     needs: build
