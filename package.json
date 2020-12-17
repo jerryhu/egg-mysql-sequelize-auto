@@ -1,21 +1,23 @@
 {
   "name": "egg-mysql-sequelize-auto",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "description": "Automatically generate mysql sequelize models for Egg.js framework from your database.",
   "main": "index.js",
-  "devDependencies": {
+  "dependencies": {
     "fs-extra": "^9.0.1",
+    "mysql": "^2.18.1",
+    "mkdirp": "^1.0.4",
+    "yargs": "^15.4.1",
+    "lodash": "^4.17.20",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
     "@types/fs-extra": "^9.0.4",
     "@types/mysql": "^2.15.15",
     "@types/node": "^14.14.7",
     "@types/lodash": "^4.14.108",
-    "lodash": "^4.17.20",
-    "mysql": "^2.18.1",
     "typescript": "^4.0.2",
-    "rimraf": "^3.0.2",
-    "mkdirp": "^1.0.4",
-    "path": "^0.12.7",
-    "yargs": "^16.2.0"
+    "rimraf": "^3.0.2"
   },
   "scripts": {
     "tsc": "tsc",
@@ -26,7 +28,7 @@
     "node": ">= 8"
   },
   "bin": {
-    "mysql-sequelize-model": "bin/mysql-sequelize-model"
+    "mysql-sequelize-auto": "bin/mysql-sequelize-auto"
   },
   "files": [
     "*.js",
