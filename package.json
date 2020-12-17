@@ -1,6 +1,6 @@
 {
   "name": "egg-mysql-sequelize-auto",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Automatically generate mysql sequelize models for Egg.js framework from your database.",
   "main": "index.js",
   "devDependencies": {
