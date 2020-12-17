@@ -15,7 +15,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
+      - run: |
+          if [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
       - run: npm build
 
   publish-npm:
@@ -27,7 +32,12 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: |
+          if [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
