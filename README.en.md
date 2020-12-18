@@ -1,14 +1,14 @@
 # egg-mysql-sequelize-auto
-用命令行自动生成Egg.js框架SequelizeJS的model类 (只支持typescript)
+Automatically generate models for SequelizeJS & Egg.js framework via command line (Typescript version only).
 
-Read this in other languages: [English](https://github.com/jerryhu/egg-mysql-sequelize-auto/blob/main/README.en.md)
+Read this in other languages: [简体中文](https://github.com/jerryhu/egg-mysql-sequelize-auto/blob/main/README.md)
 
-## 安装
+## Install
 ```
 npm install egg-mysql-sequelize-auto --save-dev
 ```
 
-## 命令行说明
+## Usage
 ```
 mysql-sequelize-auto -h <host> -d <database> -p [port] -u <user> -x [password] -o [./path/to/model] -t [tableName]
 
@@ -23,33 +23,33 @@ Options:
   -f, --over-write  Force to overwrite existed model files                [boolean]
 ```
 
-## 设置
-### package.json [选项 1]
+## Configuration
+### package.json [option 1]
 
 ```json
 "scripts": {
   "model": "mysql-sequelize-auto -h 127.0.0.1 -d database_name -p 3306 -u user -x password -o './app/model' -t table_name"
 }
 ```
-#### 命令行
+#### Command
 ```
 npm run model
 ```
 
 ---
-### package.json [选项 2]
+### package.json [option 2]
 ```json
 "scripts": {
   "model": "mysql-sequelize-auto -h 127.0.0.1 -d database_name -p 3306 -u user -x password -o './app/model'"
 }
 ```
-#### 命令行
+#### Command
 ```
 npm run model -- --t=table_name
 ```
 
-## 例子
-### 生成[test_table]的sql脚本
+## Example
+### Sql script for table [test_table]
 ```sql
 CREATE TABLE `test_table` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -62,7 +62,7 @@ CREATE TABLE `test_table` (
   PRIMARY KEY (`id`));
 ```
 
-### 生成的Model文件
+### Generated model files
 /model/TestTable.ts
 ```ts
 import { Application } from 'egg';
@@ -153,5 +153,5 @@ class TestTable extends Model<TestTableAttributes, any> implements TestTableAttr
 export { TestTableAttributes, TestTable };
 ```
 ---
-## 链接
-[Sequelize-Auto](https://github.com/sequelize/sequelize-auto) (从Sequelize-Auto借用了一些代码)
+## Links
+[Sequelize-Auto](https://github.com/sequelize/sequelize-auto) (Borrowed some code from Sequelize-Auto)
