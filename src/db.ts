@@ -34,7 +34,7 @@ export class Db {
 
 
   public async getTableColumns(tableName:string):Promise<Array<TableColumn>> {
-    return await this.query(`desc ${tableName}`, []);
+    return await this.query(`desc \`${tableName}\``, []);
   }
 
   public async getComments(dbName:string, tableName:string):Promise<Array<TableColumnComment>> {
