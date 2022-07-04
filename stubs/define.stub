@@ -1,9 +1,9 @@
-import { Model } from 'sequelize';
+import { Model, CreationAttributes } from 'sequelize';
 
 interface ${classname}Attributes
   ${attribute}
   
-class ${classname} extends Model<${classname}Attributes, any> implements ${classname}Attributes 
+class ${classname} extends Model<${classname}Attributes, CreationAttributes> implements ${classname}Attributes 
   ${attribute}
   
 export { ${classname}Attributes, ${classname} };
