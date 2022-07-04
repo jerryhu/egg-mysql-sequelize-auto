@@ -118,15 +118,13 @@ export default function(app: Application) {
     tableName: 'test_table',
   });
 
-  return class extends ExportModel<TestTable, any> {
-
-  };
+  return ExportModel;
 
 }
 ```
 /model/define/TestTable.d.ts
 ```ts
-import { Model } from 'sequelize';
+import { Model, CreationAttributes } from 'sequelize';
 
 interface TestTableAttributes
   {
@@ -139,7 +137,7 @@ interface TestTableAttributes
 	removed?: number
 }
   
-class TestTable extends Model<TestTableAttributes, any> implements TestTableAttributes 
+class TestTable extends Model<TestTableAttributes, CreationAttributes> implements TestTableAttributes 
   {
 	id?: number;
 	key?: string;
